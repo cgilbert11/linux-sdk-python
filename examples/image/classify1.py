@@ -11,7 +11,7 @@ from edge_impulse_linux.image import ImageImpulseRunner
 
 runner = None
 # if you don't want to see a camera preview, set this to False
-show_camera = True
+show_camera = False
 if (sys.platform == 'linux' and not os.environ.get('DISPLAY')):
     show_camera = False
 
