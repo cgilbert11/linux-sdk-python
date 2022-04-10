@@ -83,7 +83,7 @@ def main(argv):
                     raise Exception("Multiple cameras found. Add the camera port ID as a second argument to use to this script")
                 videoCaptureDeviceId = int(port_ids[0])
 
-            camera = cv2.VideoCapture(videoCaptureDeviceId)
+            camera = cv2.VideoCapture('uvch264src device=/dev/video0 ! video/x-raw,width=640,height=480 ! videoconvert ! appsink', cv2.CAP_GSTREAMER)
             ret = camera.read()[0]
             if ret:
                 backendName = camera.getBackendName()
